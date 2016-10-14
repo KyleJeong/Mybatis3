@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- 1 -->
+<mapper namespace="sample.dao.petMapper">
+	<!-- 2 -->
+	<select id="selectPet" parameterType="int" resultMap="petResultMap">
+		SELECT * FROM PET WHERE PET_ID = #{petId}
+	</select>
+	<!-- 3 -->
+	<resultMap id="petResultMap" type="sample.domain.Pet">
+		<id property = "petId" column = "PET_ID"/>
+		<result property = "petName" column="PET_NAME"/>
+	</resultMap>
+</mapper>
